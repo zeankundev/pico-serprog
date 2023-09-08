@@ -1,5 +1,10 @@
 name: build
-on: push
+on:
+  workflow_dispatch:
+    inputs:
+      workflow-file:
+        description: Name of the workflow file to run (e.g., build.yaml)
+        required: true
 jobs:
   build:
     runs-on: ubuntu-latest
